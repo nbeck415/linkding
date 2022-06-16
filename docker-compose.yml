@@ -6,6 +6,7 @@ services:
     image: sissbruecker/linkding:latest
     labels:
       shipyard.route: '/'
+      shipyard.init: docker-compose exec linkding python manage.py createsuperuser --username=admin --email=hello@shipyard.build
     ports:
       - "9090"
     volumes:
